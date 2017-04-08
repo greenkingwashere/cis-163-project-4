@@ -1,0 +1,17 @@
+package W17Project4StudentHelp;
+
+public class SpecialNeedsPerson extends Person{
+	SpecialNeedsPerson(){
+		double  specNeedsBoothTime;
+		double eateryTime;
+		double leaveTime;
+		specNeedsBoothTime = super.getBoothTime() * 3;
+		eateryTime = super.boothTime * 4;
+		leaveTime = super.getTickTime() * 3;
+		
+
+	}
+	
+
+}
+
