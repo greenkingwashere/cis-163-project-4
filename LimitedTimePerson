@@ -1,0 +1,15 @@
+package W17Project4StudentHelp;
+
+public class LimitedTimePerson extends Person{
+	LimitedTimePerson(){
+		double  specNeedsBoothTime;
+		double eateryTime;
+		double leaveTime;
+		specNeedsBoothTime = super.getBoothTime() * 3;
+		eateryTime = super.boothTime * 4;
+		leaveTime = super.getTickTime() * 3;
+		
+
+	}
+}
+	
