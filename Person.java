@@ -1,4 +1,4 @@
-/**
+ /**
  * 
  */
 package W17Project4StudentHelp;
@@ -6,7 +6,7 @@ package W17Project4StudentHelp;
 /**
  * @author   Roger Ferguson
  */
-public abstract class Person {
+public abstract class Person implements ClockListener{
 
 	private int tickTime;
 
