@@ -22,10 +22,13 @@ import javax.swing.JTextField;
 public class GUI extends JFrame implements ActionListener {
 	
 	JLabel label1, label2, label3, label4, label5, label6, label7, label8;
+	
 	public GUI(){
+		
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints position = new GridBagConstraints();
+		
 		position.anchor = GridBagConstraints.PAGE_START;
 		position.insets =  new Insets(0,0,60,70); 
 		position.gridwidth = 1;
@@ -40,7 +43,7 @@ public class GUI extends JFrame implements ActionListener {
 		position.gridx = 0;
 		position.gridy = 20;
 		label2 = new JLabel("Seconds to next person");
-		label2.setForeground(Color.BLACK);
+		label2.setForeground(Color.RED);
 		add(label2, position);
 		
 		position.gridx = 0;
@@ -52,7 +55,7 @@ public class GUI extends JFrame implements ActionListener {
 		position.gridx = 0;
 		position.gridy = 40;
 		label4 = new JLabel("Total time in seconds");
-		label4.setForeground(Color.BLACK);
+		label4.setForeground(Color.RED);
 		add(label4, position);
 		
 		position.gridx = 0;
@@ -64,7 +67,7 @@ public class GUI extends JFrame implements ActionListener {
 		position.gridx = 0;
 		position.gridy = 60;
 		label6 = new JLabel("  Seconds before person leaves");
-		label6.setForeground(Color.BLACK);
+		label6.setForeground(Color.RED);
 		add(label6, position);
 		
 		position.gridx = 0;
@@ -76,11 +79,12 @@ public class GUI extends JFrame implements ActionListener {
 		position.gridx = 20;
 		position.gridy = 10;
 		label8 = new JLabel("  ---------------------------");
-		label8.setForeground(Color.BLACK);
 		add(label8, position);
 		
 		//temp string, replace with backEnd accessor 
 		JTextField secsToNext = new JTextField("hey matie                                ");
+		secsToNext.setBackground(Color.BLACK);
+		secsToNext.setForeground(Color.WHITE);
 		position.gridx = 20;
 		position.gridy = 20;
 		add(secsToNext,position);
@@ -92,11 +96,14 @@ public class GUI extends JFrame implements ActionListener {
 		add(avgSecPer,position);
 		secsToNext.setEditable(false);
 		
-		JTextField totalTimeinSec = new JTextField("hey matie3                              ");
+		JTextField totalTimeInSec = new JTextField("hey matie3                              ");
 		position.gridx = 20;
 		position.gridy = 40;
-		add(totalTimeinSec,position);
+		totalTimeInSec.setBackground(Color.BLACK);
+		totalTimeInSec.setForeground(Color.WHITE);
+		add(totalTimeInSec,position);
 		secsToNext.setEditable(false);
+		
 		
 		JTextField avgSecPerEatery = new JTextField("hey matie4                             ");
 		position.gridx = 20;
@@ -107,6 +114,8 @@ public class GUI extends JFrame implements ActionListener {
 		JTextField secB4persomLeaves = new JTextField("hey matie5                             ");
 		position.gridx = 20;
 		position.gridy = 60;
+		secB4persomLeaves.setBackground(Color.BLACK);
+		secB4persomLeaves.setForeground(Color.WHITE);
 		add(secB4persomLeaves,position);
 		secsToNext.setEditable(false);
 		
@@ -116,16 +125,22 @@ public class GUI extends JFrame implements ActionListener {
 		add(numOfEateries,position);
 		secsToNext.setEditable(false);
 		
+		//JButton
+		
 	
 	}
 	
+	  //backGround color changes then reverts, issue with scope?
 	public static void main(String[] args){
 		GUI game = new GUI();
 		game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        game.setTitle("Almighty Food Court Simulation");
+        game.setTitle("Sub-Par Food Court Simulation");
         game.setSize(500,500); 
         game.setVisible(true);
         game.pack();
+       // game.setBackground(Color.BLACK);
+      
+        
 	}
 	
 	@Override
@@ -135,4 +150,3 @@ public class GUI extends JFrame implements ActionListener {
 	}
 	
 }
-
