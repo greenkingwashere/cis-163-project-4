@@ -1,15 +1,15 @@
 package W17Project4StudentHelp;
 
 public class LimitedTimePerson extends Person{
-	LimitedTimePerson(){
-		double  specNeedsBoothTime;
-		double eateryTime;
-		double leaveTime;
-		specNeedsBoothTime = super.getBoothTime() * 3;
-		eateryTime = super.boothTime * 4;
-		leaveTime = super.getTickTime() * 3;
-		
+	public LimitedTimePerson(Eatery num1, int num2, int num3, int num4){
+		super(num1,num2,num3/2,num4/2);
+	}
 
+	@Override
+	public void event(int tick) {
+		// TODO Auto-generated method stub
+		
 	}
 }
+
 	
