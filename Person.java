@@ -3,9 +3,6 @@
  */
 package W17Project4StudentHelp;
 
-/**
- * @author   Roger Ferguson
- */
 public abstract class Person implements ClockListener{
 	int tickTime;
 	Eatery Destination;
@@ -31,6 +28,13 @@ public abstract class Person implements ClockListener{
 		leaveTime = num3;
 		eateryTime = num4;
 	}
+	public void KILL(){//kill the person
+		Sim.line.remove(this);
+		
+		
+		
+	}
+	
 	/**
 	public double getLeaveTime() {
 		return leaveTime;
@@ -51,4 +55,3 @@ public abstract class Person implements ClockListener{
 		this.leaveTime = (int) time;
 	}
 	*/
-}
