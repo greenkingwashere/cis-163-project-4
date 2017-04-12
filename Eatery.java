@@ -3,11 +3,8 @@
  */
 package W17Project4StudentHelp;
 import java.util.ArrayList;
-/**
- * @author   Roger Ferguson
- */
 public class Eatery implements ClockListener {
-	private ArrayList<Person> Q = new ArrayList<Person>();
+	ArrayList<Person> Q = new ArrayList<Person>();
 	
 	private int timeOfNextEvent = 0;
 	private int maxQlength = 0;
@@ -22,15 +19,16 @@ public class Eatery implements ClockListener {
 	}
 	
 	public void event (int tick){
-		if (tick >= timeOfNextEvent) {
-//			if (person != null) { 			// Notice the delay that takes place here
-//				person.getDestination().add(person);    // take this person to the next station. 
-//			person = null;				// I have send the person on. 
-//			}
+		if (tick >= timeOfNextEvent){
+  			if (person != null){ 			// Notice the delay that takes place here
+				//person.Destination.add(person);    // take this person to the next station. 
+  				Sim.line.add(person);
+				person = null;				// I have send the person on. 
+			}
 			
 			if (Q.size() >= 1) {
 				person = Q.remove(0);		// do not send this person as of yet, make them wait. 
-				timeOfNextEvent = tick + (int) (person.getBoothTime() + 1);
+				timeOfNextEvent = tick + (int) (person.leaveTime + 1);
 				completed++;										
 			}	
 		}
