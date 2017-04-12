@@ -1,8 +1,16 @@
 package W17Project4StudentHelp;
 
+
+
 /*
- * GridBagLayoutDemo.java requires no other files.
+ * 
+ * 
+ * Dez White
+ * 
+ * 
+ * 
  */
+
 
 import java.awt.*;
 import javax.swing.JButton;
