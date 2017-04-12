@@ -28,15 +28,15 @@ public class PersonProducer implements ClockListener {
 	}
 	
 	public void event(int tick) {
-		if (nextPerson <= tick) {
-			nextPerson = tick + numOfTicksNextPerson;
+		if (nextPerson <= tick) { //if the time to add another person has arrived
+			nextPerson = tick + numOfTicksNextPerson; //set the time of the next person to arrive
 			
-			Person person = new Person();
+			Person person = new NormalPerson(eatery,Sim.cashTime(),Sim.leavingTime(), Sim.eateryTiming());
 			
 			int rNumber = (int)(Math.random() * 100);
 
-			person.setEateryTime(averageEateryTime*0.5*r.nextGaussian() + averageEateryTime +.5);
-			person.setTickTime(tick);
+			person.eateryTime = (int) (averageEateryTime*0.5*r.nextGaussian() + averageEateryTime +.5); //some randomness stuff?
+			person.tickTime = (tick);
 			eatery.add(person);
 			
 		//	person.setDestination(theLocationAfterTheEatery);  // You can save off where the person should go.
