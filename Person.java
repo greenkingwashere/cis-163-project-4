@@ -7,15 +7,15 @@ package W17Project4StudentHelp;
  * @author   Roger Ferguson
  */
 public abstract class Person implements ClockListener{
-	private int tickTime;
-	private Eatery Destination;
+	int tickTime;
+	Eatery Destination;
 	protected int cashiersTime;
 	protected int leaveTime;
 	protected int eateryTime;
 	
-	public abstract void setCashiersTime(int time);
-	public abstract void setLeaveTime(int time);
-	public abstract void setEateryTime(int time);
+	//public abstract void setCashiersTime(int time);
+	//public abstract void setLeaveTime(int time);
+	//public abstract void setEateryTime(int time);
 	
 	public Person(Eatery num1, int num2, int num3, int num4){
 		/**@param num1 the Eatery the person is going to
@@ -31,6 +31,7 @@ public abstract class Person implements ClockListener{
 		leaveTime = num3;
 		eateryTime = num4;
 	}
+	/**
 	public double getLeaveTime() {
 		return leaveTime;
 	}
@@ -47,6 +48,7 @@ public abstract class Person implements ClockListener{
 		this.tickTime = tickTime;
 	}
 	public void setEateryTime(double time) {
-		this.leaveTime = time;
+		this.leaveTime = (int) time;
 	}
+	*/
 }
