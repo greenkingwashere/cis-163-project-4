@@ -30,10 +30,22 @@ public class PersonProducer implements ClockListener {
 	public void event(int tick) {
 		if (nextPerson <= tick) { //if the time to add another person has arrived
 			nextPerson = tick + numOfTicksNextPerson; //set the time of the next person to arrive
-			
-			Person person = new NormalPerson(eatery,Sim.cashTime(),Sim.leavingTime(), Sim.eateryTiming());
-			
+			Person person;
 			int rNumber = (int)(Math.random() * 100);
+			System.out.println(rNumber);
+			if (rNumber<10){
+				person = new SpecialNeedsPerson(eatery,Sim.cashTime(),Sim.leavingTime(), Sim.eateryTiming());
+			}
+			else if (rNumber<30){
+				person = new LimitedTimePerson(eatery,Sim.cashTime(),Sim.leavingTime(), Sim.eateryTiming());
+			}
+			else{
+				person = new NormalPerson(eatery,Sim.cashTime(),Sim.leavingTime(), Sim.eateryTiming());
+			}
+			
+			
+			
+			Sim.clk.add(person);
 
 			person.eateryTime = (int) (averageEateryTime*0.5*r.nextGaussian() + averageEateryTime +.5); //some randomness stuff?
 			person.tickTime = (tick);
