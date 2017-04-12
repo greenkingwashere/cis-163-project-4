@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package W17Project4StudentHelp;
 
 /**
@@ -13,12 +11,6 @@ public class Sim {
 			
 			Clock clk = new Clock();
 			Eatery booth = new Eatery();
-
-			// 		int numOfTicksNextPerson = 20 
-			//      int averageBoothTime = 20
-			
-			
-			
 			
 			PersonProducer produce = new PersonProducer(booth, 20, 18);	
 			clk.add(produce);
