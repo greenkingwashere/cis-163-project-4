@@ -7,7 +7,18 @@ public class LimitedTimePerson extends Person{
 
 	@Override
 	public void event(int tick) {
-		// TODO Auto-generated method stub
+		if (tick >= leaveTime){
+			KILL();
+		}
+		if (Sim.isInFront(this)){
+			for (int i = 0;i<Sim.cashiers.size();i++){
+				if (!Sim.cashiers.get(i).isFull()){
+					System.out.println("it happened");
+					Sim.cashiers.get(i).add(this);
+					break;
+				}
+			}
+		}
 		
 	}
 }
