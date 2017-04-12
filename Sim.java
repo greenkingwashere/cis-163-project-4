@@ -17,6 +17,9 @@ public class Sim {
 			// 		int numOfTicksNextPerson = 20 
 			//      int averageBoothTime = 20
 			
+			
+			
+			
 			PersonProducer produce = new PersonProducer(booth, 20, 18);	
 			clk.add(produce);
 			clk.add(booth);
@@ -27,4 +30,8 @@ public class Sim {
 			System.out.println("People that are still in the Q:" + booth.getLeft() + " people.");
 			System.out.println ("Max Q length:" + booth.getMaxQlength() + " people.");
 		}
-	}
+	//these are for grabbing variables pre-gui, ignore these
+	public static int cashTime(){return 20;}
+	public static int leavingTime(){return 150;}
+	public static int eateryTiming(){return 15;}
+}
