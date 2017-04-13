@@ -5,7 +5,7 @@ package W17Project4StudentHelp;
 /*
  * 
  * 
- * Dez White
+ * Dez White, Gray Schafer
  * 
  * 
  * 
@@ -13,11 +13,16 @@ package W17Project4StudentHelp;
 
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+public class GUI implements ActionListener{
+	
 
-public class GUI {
+
 	final static boolean shouldFill = true;
 	final static boolean shouldWeightX = true;
 	final static boolean RIGHT_TO_LEFT = false;
@@ -314,4 +319,11 @@ public class GUI {
 			}
 		});
 	}
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	
+}
 }
