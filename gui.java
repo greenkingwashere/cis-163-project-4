@@ -1,7 +1,5 @@
 package W17Project4StudentHelp;
 
-
-
 /*
  * 
  * 
@@ -11,7 +9,6 @@ package W17Project4StudentHelp;
  * 
  */
 
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,14 +16,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-public class GUI implements ActionListener{
-	
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class GUI implements ActionListener {
 
 	final static boolean shouldFill = true;
 	final static boolean shouldWeightX = true;
 	final static boolean RIGHT_TO_LEFT = false;
+	static ArrayList<Person> line;
+	static ArrayList<Eatery> stores;
+	static ArrayList<PersonProducer> producers;
+	static ArrayList<Cashier> cashiers;
+	static Clock clk;
 	int globalTemp;
+	static int numRestaur;
+	static int numCashier;
 
 	public static void addComponentsToPane(Container pane) {
 		if (RIGHT_TO_LEFT) {
@@ -41,7 +46,6 @@ public class GUI implements ActionListener{
 		pane.setBackground(Color.BLACK);
 		GridBagConstraints c = new GridBagConstraints();
 		if (shouldFill) {
-			// natural height, maximum width
 			c.fill = GridBagConstraints.HORIZONTAL;
 		}
 
@@ -49,7 +53,6 @@ public class GUI implements ActionListener{
 		inputInfo.setEditable(false);
 		inputInfo.setBackground(Color.DARK_GRAY);
 		inputInfo.setOpaque(true);
-
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
@@ -88,6 +91,7 @@ public class GUI implements ActionListener{
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
+
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 1;
@@ -182,7 +186,7 @@ public class GUI implements ActionListener{
 		c.gridy = 5;
 		pane.add(secB4departOutput, c);
 
-		NumberOfPlaces = new JTextField("Number of restaurants:   ");
+		NumberOfPlaces = new JTextField("Number of restaurants:   " + numRestaur);
 		NumberOfPlaces.setEditable(false);
 		NumberOfPlaces.setBackground(Color.DARK_GRAY);
 		NumberOfPlaces.setOpaque(true);
@@ -266,7 +270,7 @@ public class GUI implements ActionListener{
 		c.gridy = 21;
 		pane.add(throughput, c);
 
-		throughputOutput = new JTextField("                   Temp to be replaced with backend accessor");
+		throughputOutput = new JTextField("                  xxxxxxxxxxxxxxxxxxxxxxxxx");
 		throughputOutput.setEditable(false);
 		throughputOutput.setBackground(Color.black);
 		throughputOutput.setForeground(Color.white);
@@ -311,19 +315,81 @@ public class GUI implements ActionListener{
 	}
 
 	public static void main(String[] args) {
-		// Schedule a job for the event-dispatching thread:
-		// creating and showing this application's GUI.
+
+		line = new ArrayList<Person>(); // middle line of people going to the
+		// cashiers
+		stores = new ArrayList<Eatery>(); // all eateries
+		producers = new ArrayList<PersonProducer>();
+		cashiers = new ArrayList<Cashier>();
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Num of eateries:");
+		int num = scan.nextInt();
+		numRestaur = num;
+		clk = new Clock();
+
+		for (int i = 0; i < num; i++) {
+			stores.add(new Eatery());
+			producers.add(new PersonProducer(stores.get(i), 20, 18));
+			clk.add(producers.get(i));
+			clk.add(stores.get(i));
+		}
+
+		System.out.print("Num of cashiers:");
+		num = scan.nextInt();
+		numCashier = num;
+		// throws error
+		// for (int i = 0; i < num; i++) {
+		// cashiers.add(new Cashier());
+		// clk.add(cashiers.get(i));
+		// }
+
+		// throws error
+		/*
+		 * System.out.println("Debug? (0/1):"); int finite = scan.nextInt(); if
+		 * (finite == 1) { System.out.println("Stores: " + stores);
+		 * System.out.println("Producers: " + producers); }
+		 */
+		Eatery booth = new Eatery();
+
+		int numOfTicksNextPerson = 20;
+		int averageBoothTime = 20;
+
+		clk.run(1000);
+
+		// System.out.println("Line: " + line);
+		// System.out.println("Cashier: " + cashiers);
+		// System.out.println("Through put is: " + stores.get(0).getThroughPut()
+		// + " people.");
+		// System.out.println("People that are still in the Q:" +
+		// stores.get(0).getLeft() + " people.");
+		// System.out.println("Max Q length:" + stores.get(0).getMaxQlength() +
+		// " people.");
+
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();
 			}
 		});
+
 	}
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
 
-@Override
-public void actionPerformed(ActionEvent e) {
-	// TODO Auto-generated method stub
-	
-}
+	}
+
+	public static boolean isInFront(Person pal) { // test this
+		// System.out.println("isinfront");
+		try {
+			if (line.get(0) == pal)
+				return true;
+			else
+				return false;
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println(e);
+			return false;
+		}
+
+	}
 }
