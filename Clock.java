@@ -1,10 +1,7 @@
-/**
- * 
- */
 package W17Project4StudentHelp;
 
 /**
- * @author   Roger Ferguson
+ * @author Roger Ferguson
  */
 public class Clock {
 
