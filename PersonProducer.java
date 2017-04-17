@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package W17Project4StudentHelp;
 
 import java.util.Random;
@@ -22,14 +20,12 @@ public class PersonProducer implements ClockListener {
 		this.eatery = eatery;
 		this.numOfTicksNextPerson = numOfTicksNextPerson;
 		this.averageEateryTime = averageEateryTime;
-		// r.setSeed(13); // This will cause the same random numbers
+
 	}
 
 	public void event(int tick) {
-		if (nextPerson <= tick) { // if the time to add another person has
-									// arrived
-			nextPerson = tick + numOfTicksNextPerson; // set the time of the
-														// next person to arrive
+		if (nextPerson <= tick) {
+			nextPerson = tick + numOfTicksNextPerson;
 			Person person;
 			int rNumber = (int) (Math.random() * 100);
 			System.out.println(rNumber);
@@ -49,8 +45,6 @@ public class PersonProducer implements ClockListener {
 			person.tickTime = (tick);
 			eatery.add(person);
 
-			// person.setDestination(theLocationAfterTheEatery); // You can save
-			// off where the person should go.
 		}
 	}
 
