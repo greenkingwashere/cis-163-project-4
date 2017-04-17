@@ -3,7 +3,7 @@ package W17Project4StudentHelp;
 /*
  * 
  * 
- * Dez White, Gray Schafer
+ * Dez White
  * 
  * 
  * 
@@ -32,10 +32,10 @@ public class GUI implements ActionListener {
 	final static boolean RIGHT_TO_LEFT = false;
 	int globalTemp;
 	JButton beginSim, endSim;
-	JTextField avgTime, maxQlengthOutput, inputInfo, throughputOutput, throughput, outputInfoOutput, outputInfo,
-			NumberOfPlacesOutput, secB4departOutput, avgSecPerEatOutput, totalInSecsOutput, avgSecPerRegOutput,
+	JTextField avgTime, maxQlengthInput, inputInfo, throughputInput, throughput, outputInfoInput, outputInfo,
+			NumberOfPlacesInput, secB4departInput, avgSecPerEatInput, totalInSecsInput, avgSecPerRegInput,
 			secsToNextPerson, sec2Next, avgSecPerReg, totalInSecs, avgSecPerEat, secB4depart, NumberOfPlaces,
-			inputInfoOutput, maxQlength, avgTimeOutput, numPeopleLeft, numPeopleLeftOutput;
+			inputInfoInput, maxQlength, avgTimeInput, numPeopleLeft, numPeopleLeftInput;
 	int line1 = 0;
 	int line2 = 0;
 	int line3 = 0;
@@ -72,19 +72,18 @@ public class GUI implements ActionListener {
 		c.gridy = 0;
 		pane.add(inputInfo, c);
 
-		inputInfoOutput = new JTextField("                   	----------------------------");
-		inputInfoOutput.setEditable(false);
-		inputInfoOutput.setBackground(Color.BLACK);
-		inputInfoOutput.setForeground(Color.white);
+		inputInfoInput = new JTextField("                   	----------------------------");
+		inputInfoInput.setEditable(false);
+		inputInfoInput.setBackground(Color.BLACK);
+		inputInfoInput.setForeground(Color.white);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 0;
-		pane.add(inputInfoOutput, c);
+		pane.add(inputInfoInput, c);
 
-		pane.add(inputInfoOutput, c);
 		// int numba = scan.nextInt();
 		sec2Next = new JTextField("Enter seconds to next person:  ");
 		sec2Next.setEditable(false);
@@ -120,17 +119,17 @@ public class GUI implements ActionListener {
 		c.gridy = 2;
 		pane.add(avgSecPerReg, c);
 
-		avgSecPerRegOutput = new JTextField("" + line2 + "");
-		avgSecPerRegOutput.setEditable(true);
-		avgSecPerRegOutput.setBackground(Color.white);
-		avgSecPerRegOutput.setForeground(Color.black);
+		avgSecPerRegInput = new JTextField("" + line2 + "");
+		avgSecPerRegInput.setEditable(true);
+		avgSecPerRegInput.setBackground(Color.white);
+		avgSecPerRegInput.setForeground(Color.black);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 2;
-		pane.add(avgSecPerRegOutput, c);
+		pane.add(avgSecPerRegInput, c);
 
 		totalInSecs = new JTextField("Enter total time in seconds  ");
 		totalInSecs.setEditable(false);
@@ -142,17 +141,17 @@ public class GUI implements ActionListener {
 		c.gridy = 3;
 		pane.add(totalInSecs, c);
 
-		totalInSecsOutput = new JTextField("" + line3 + "");
-		totalInSecsOutput.setEditable(true);
-		totalInSecsOutput.setBackground(Color.white);
-		totalInSecsOutput.setForeground(Color.black);
+		totalInSecsInput = new JTextField("" + line3 + "");
+		totalInSecsInput.setEditable(true);
+		totalInSecsInput.setBackground(Color.white);
+		totalInSecsInput.setForeground(Color.black);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 3;
-		pane.add(totalInSecsOutput, c);
+		pane.add(totalInSecsInput, c);
 
 		avgSecPerEat = new JTextField("Enter average seconds per eatery:  ");
 		avgSecPerEat.setEditable(false);
@@ -164,17 +163,17 @@ public class GUI implements ActionListener {
 		c.gridy = 4;
 		pane.add(avgSecPerEat, c);
 
-		avgSecPerEatOutput = new JTextField("" + line4 + "");
-		avgSecPerEatOutput.setEditable(true);
-		avgSecPerEatOutput.setBackground(Color.white);
-		avgSecPerEatOutput.setForeground(Color.black);
+		avgSecPerEatInput = new JTextField("" + line4 + "");
+		avgSecPerEatInput.setEditable(true);
+		avgSecPerEatInput.setBackground(Color.white);
+		avgSecPerEatInput.setForeground(Color.black);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 4;
-		pane.add(avgSecPerEatOutput, c);
+		pane.add(avgSecPerEatInput, c);
 
 		secB4depart = new JTextField("Enter seconds before person leaves:  ");
 		secB4depart.setEditable(false);
@@ -186,17 +185,17 @@ public class GUI implements ActionListener {
 		c.gridy = 5;
 		pane.add(secB4depart, c);
 
-		secB4departOutput = new JTextField("" + line5 + "");
-		secB4departOutput.setEditable(true);
-		secB4departOutput.setBackground(Color.white);
-		secB4departOutput.setForeground(Color.black);
+		secB4departInput = new JTextField("" + line5 + "");
+		secB4departInput.setEditable(true);
+		secB4departInput.setBackground(Color.white);
+		secB4departInput.setForeground(Color.black);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 5;
-		pane.add(secB4departOutput, c);
+		pane.add(secB4departInput, c);
 
 		NumberOfPlaces = new JTextField("Enter number of restaurants:   ");
 		NumberOfPlaces.setEditable(false);
@@ -208,22 +207,23 @@ public class GUI implements ActionListener {
 		c.gridy = 6;
 		pane.add(NumberOfPlaces, c);
 
-		NumberOfPlacesOutput = new JTextField("" + line6 + "");
-		NumberOfPlacesOutput.setEditable(false);
-		NumberOfPlacesOutput.setBackground(Color.white);
-		NumberOfPlacesOutput.setForeground(Color.black);
+		NumberOfPlacesInput = new JTextField("" + line6 + "");
+		NumberOfPlacesInput.setEditable(false);
+		NumberOfPlacesInput.setBackground(Color.white);
+		NumberOfPlacesInput.setForeground(Color.black);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 6;
-		pane.add(NumberOfPlacesOutput, c);
+		pane.add(NumberOfPlacesInput, c);
 
 		beginSim = new JButton("            Begin Simulation >");
 		beginSim.setBackground(Color.black);
 		beginSim.setOpaque(true);
 		beginSim.setBorderPainted(false);
+		beginSim.addActionListener(this);
 		Dimension panelD = new Dimension(10, 20);
 		beginSim.setPreferredSize(panelD);
 		beginSim.setForeground(Color.GREEN);
@@ -258,17 +258,17 @@ public class GUI implements ActionListener {
 		c.gridy = 20;
 		pane.add(outputInfo, c);
 
-		outputInfoOutput = new JTextField("                   	----------------------------");
-		outputInfoOutput.setEditable(false);
-		outputInfoOutput.setBackground(Color.BLACK);
-		outputInfoOutput.setForeground(Color.white);
+		outputInfoInput = new JTextField("Replace with accessor");
+		outputInfoInput.setEditable(false);
+		outputInfoInput.setBackground(Color.BLACK);
+		outputInfoInput.setForeground(Color.white);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 20;
-		pane.add(outputInfoOutput, c);
+		pane.add(outputInfoInput, c);
 
 		throughput = new JTextField(" Throughput  ");
 		throughput.setEditable(false);
@@ -282,17 +282,17 @@ public class GUI implements ActionListener {
 		c.gridy = 21;
 		pane.add(throughput, c);
 
-		throughputOutput = new JTextField("                   	----------------------------");
-		throughputOutput.setEditable(false);
-		throughputOutput.setBackground(Color.BLACK);
-		throughputOutput.setForeground(Color.white);
+		throughputInput = new JTextField("Replace with accessor");
+		throughputInput.setEditable(false);
+		throughputInput.setBackground(Color.BLACK);
+		throughputInput.setForeground(Color.white);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 21;
-		pane.add(throughputOutput, c);
+		pane.add(throughputInput, c);
 
 		avgTime = new JTextField(" Average seconds per cashier  ");
 		avgTime.setEditable(false);
@@ -306,17 +306,17 @@ public class GUI implements ActionListener {
 		c.gridy = 22;
 		pane.add(avgTime, c);
 
-		avgTimeOutput = new JTextField("                   	----------------------------");
-		avgTimeOutput.setEditable(false);
-		avgTimeOutput.setBackground(Color.BLACK);
-		avgTimeOutput.setForeground(Color.white);
+		avgTimeInput = new JTextField("Replace with accessor");
+		avgTimeInput.setEditable(false);
+		avgTimeInput.setBackground(Color.BLACK);
+		avgTimeInput.setForeground(Color.white);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 22;
-		pane.add(avgTimeOutput, c);
+		pane.add(avgTimeInput, c);
 
 		numPeopleLeft = new JTextField(" Number of people left line:  ");
 		numPeopleLeft.setEditable(false);
@@ -330,18 +330,18 @@ public class GUI implements ActionListener {
 		c.gridy = 23;
 		pane.add(numPeopleLeft, c);
 
-		numPeopleLeftOutput = new JTextField("                   	----------------------------");
-		numPeopleLeftOutput.setEditable(false);
-		numPeopleLeftOutput.setBackground(Color.black);
-		numPeopleLeftOutput.setForeground(Color.white);
-		numPeopleLeftOutput.setOpaque(true);
+		numPeopleLeftInput = new JTextField("Replace with accessor");
+		numPeopleLeftInput.setEditable(false);
+		numPeopleLeftInput.setBackground(Color.black);
+		numPeopleLeftInput.setForeground(Color.white);
+		numPeopleLeftInput.setOpaque(true);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 23;
-		pane.add(numPeopleLeftOutput, c);
+		pane.add(numPeopleLeftInput, c);
 
 		maxQlength = new JTextField(" Max Q length cashier line:             ");
 		maxQlength.setEditable(false);
@@ -355,18 +355,18 @@ public class GUI implements ActionListener {
 		c.gridy = 24;
 		pane.add(maxQlength, c);
 
-		maxQlengthOutput = new JTextField("                   	----------------------------");
-		maxQlengthOutput.setEditable(false);
-		maxQlengthOutput.setBackground(Color.black);
-		maxQlengthOutput.setForeground(Color.white);
-		maxQlengthOutput.setOpaque(true);
+		maxQlengthInput = new JTextField("Replace with accessor");
+		maxQlengthInput.setEditable(false);
+		maxQlengthInput.setBackground(Color.black);
+		maxQlengthInput.setForeground(Color.white);
+		maxQlengthInput.setOpaque(true);
 		if (shouldWeightX) {
 			c.weightx = 0.5;
 		}
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 24;
-		pane.add(maxQlengthOutput, c);
+		pane.add(maxQlengthInput, c);
 
 	}
 
@@ -404,16 +404,12 @@ public class GUI implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (beginSim.isSelected()) {
+			Sim sim = new Sim();
+		}
 		// TODO Auto-generated method stub
 		// if(num)
 
 	}
 
-	public void checkChange() {
-		if (secsToNextPerson.getText() != "") {
-			// String number = "10";
-			int line1 = Integer.parseInt(secsToNextPerson.getText());
-			// System.out.println(result);
-		}
-	}
 }
