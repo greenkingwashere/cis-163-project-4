@@ -1,3 +1,4 @@
+
 package W17Project4StudentHelp;
 
 public class NormalPerson extends Person {
@@ -8,9 +9,11 @@ public class NormalPerson extends Person {
 	@Override
 	public void event(int tick) {
 		if (tick >= leaveTime) {
+			/** if they are in line too long... split*/
 			KILL();
 		}
 		if (Sim.isInFront(this)) {
+			/** if its in front, put it too a cashier */
 			for (int i = 0; i < Sim.cashiers.size(); i++) {
 				if (!Sim.cashiers.get(i).isFull()) {
 					System.out.println("it happened");
