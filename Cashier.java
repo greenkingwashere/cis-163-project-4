@@ -1,3 +1,4 @@
+
 package W17Project4StudentHelp;
 
 public class Cashier implements ClockListener {
@@ -8,6 +9,7 @@ public class Cashier implements ClockListener {
 	boolean ghost = false;
 
 	public void add(Person pal) {
+		/** add a person to the cashier */
 		if (customer == null) {
 			customer = pal;
 			ghost = true;
@@ -16,6 +18,7 @@ public class Cashier implements ClockListener {
 	}
 
 	public boolean isFull() {
+		/** checks if there is someone in line*/
 		if (customer != null)
 			return true;
 		else
